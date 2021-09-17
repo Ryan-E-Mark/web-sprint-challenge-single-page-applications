@@ -54,8 +54,8 @@ const App = () => {
     setFormValues({...formValues, [name]: value});
   }
 
-  const postPizza = addPizza => {
-    axios.post('https://reqres.in/api/orders', addPizza)
+  const postPizza = testOrder => {
+    axios.post('https://reqres.in/api/orders', testOrder)
       .then(resp => {
         setPizzas([ ...pizzas, resp.data]);
         setFormValues(initialFormValues);
@@ -93,7 +93,7 @@ const App = () => {
   }, [formValues])
 
   return (
-    
+    <div>
       <Switch>
         <Route exact path={`${url}/`}>
           <Home href="/"/>
@@ -106,10 +106,12 @@ const App = () => {
             onChange={onChange}
             disabled={disabled}
             errors={formErrors}
+            
             />
         </Route>
       </Switch>
-    
+      
+    </div>
   );
 };
 export default App;
