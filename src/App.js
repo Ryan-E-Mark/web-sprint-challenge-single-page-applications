@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Route, Switch } from 'react-router-dom';
+import { Route, Switch, useRouteMatch } from 'react-router-dom';
 import axios from 'axios';
 import * as yup from 'yup';
 
@@ -8,6 +8,8 @@ import PizzaForm from "./components/Form";
 import formSchema from "./Validate/validate";
 
 const App = () => {
+
+  const { url } = useRouteMatch();
 
   const initialFormValues = {
     name: '',
@@ -55,9 +57,9 @@ const App = () => {
   const postPizza = newPizza => {
     axios.post('https://reqres.in/api/orders', newPizza)
       .then(resp => {
-        setPizzas([resp.data, ...pizzas]);
+        setPizzas([ ...pizzas, resp.data]);
         setFormValues(initialFormValues);
-        console.log('https://reqres.in/api/orders', resp.data);
+        console.log(resp.data);
       }).catch(err => {
         console.log(err);
         setFormValues(initialFormValues);
@@ -80,7 +82,7 @@ const App = () => {
       chicken: formValues.chicken,
       tomatoes: formValues.tomatoes,
       greenpepper: formValues.greenpepper,
-      // toppings: ['pepperoni', 'salami', 'redpepper', 'sausage', 'pineapple', 'redonion', 'garlic', 'chicken', 'tomatoes', 'greenpepper'].filter(topping => !!formValues[topping]),
+      
     }
     postPizza(newPizza);
   }
@@ -93,7 +95,7 @@ const App = () => {
   return (
     
       <Switch>
-        <Route exact path={"/"}>
+        <Route exact path={`${url}/`}>
           <Home href="/"/>
         </Route>
         

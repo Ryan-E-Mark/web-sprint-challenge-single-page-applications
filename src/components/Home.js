@@ -17,11 +17,13 @@ export default function Home(props) {
                     <h2>World's Best Pizza!</h2>
                 </div>
                 <div className="nav-link">
-                    <a><Link to={"/"}>Home</Link></a>
+                    <a><Link to={`/`}>Home</Link></a>
                 </div>
             </nav>
             <div className="pizza-pic">
-                    <h1>Saucy Pizza Delivered QUICK!</h1>
+                    <div className="tasty">
+                        <h1>Tasty Pizza Delivered QUICK!</h1>
+                    </div>
                     <button id="pizza-btn" onClick={pizzaButton}>Order a Pizza!</button>
             </div>
             

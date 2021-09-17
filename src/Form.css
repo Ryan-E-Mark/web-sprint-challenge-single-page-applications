@@ -6,5 +6,24 @@
 .form-div {
     background-color: #e98b4c;
     width: 80%;
+    
+}
+.toppings {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    padding-bottom: 1%;
 }
 
+label, p {
+    font-size: 1rem;
+}
+
+.error-text {
+    color: red;
+    font-size: 1.25rem;
+}
+
+h3 {
+    font-size: 1.5rem;
+}

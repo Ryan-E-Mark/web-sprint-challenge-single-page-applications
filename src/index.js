@@ -6,8 +6,8 @@ import App from "./App";
 
 ReactDOM.render(
 <Router>
-     <Route path={'/'}>
-          <App />
-     </Route>
+     
+     <App />
+     
 </Router>, 
 document.getElementById("root"));
