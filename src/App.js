@@ -12,11 +12,7 @@ const App = () => {
     name: '',
     size: '',
     sauce: '',
-    topping1: false,
-    topping2: false,
-    topping3: false,
-    topping4: false,
-    topping5: false,
+    toppings: false,
     special: '',
   }
 
@@ -41,21 +37,22 @@ const App = () => {
   const postPizza = newPizza => {
     axios.post("https://reqres.in/api/orders", newPizza)
       .then(resp => {
-        console.log(resp)
-      }).catch(err => console.log(err))
+        setPizzas([resp.data, ...pizzas]);
+        setFormValues(initialFormValues);
+        console.log(resp);
+      }).catch(err => {
+        console.log(err);
+        setFormValues(initialFormValues);
+      })
   }
-
+  
   const onSubmit = () => {
     const newPizza = {
       name: formValues.name.trim(),
       size: formValues.size.trim(),
       sauce: formValues.sauce,
-      topping1: formValues.topping1,
-      topping2: formValues.topping2,
-      topping3: formValues.topping3,
-      topping4: formValues.topping4,
-      topping5: formValues.topping5,
       special: formValues.special,
+      toppings: ['pepperoni', 'salami', 'redpepper', 'sausage', 'pineapple', 'redonion', 'garlic', 'chicken', 'tomatoes', 'greenpepper'].filter(topping => !!formValues[topping]),
     }
     postPizza(newPizza);
   }

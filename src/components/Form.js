@@ -31,6 +31,7 @@ export default function PizzaForm(props) {
             <section className="form-page">
                 <div className="form-div">
                     <form id="pizza-form" onSubmit={submit}>
+
                         <label>
                             Name for the order: 
                             <input 
@@ -41,6 +42,7 @@ export default function PizzaForm(props) {
                                 onChange={change}
                                 />
                         </label>
+
                         <label>
                             Select your size:
                             <select onChange={change} value={values.size} name="size" id="size-dropdown">
@@ -61,7 +63,115 @@ export default function PizzaForm(props) {
                                 </option>
                             </select>
                         </label>
-                        <button disabled={disabled}>Submit your order!</button>
+
+                        <div className="toppings">
+                            <h3>Toppings</h3>
+                            <p>Select up to five!</p>
+                            <label>
+                                Pepperoni
+                                <input 
+                                    type="checkbox"
+                                    name="pepperoni"
+                                    value={values.pepperoni}
+                                    onChange={change}
+                                />
+                            </label>
+                            <label>
+                                Salami
+                                <input 
+                                    type="checkbox"
+                                    name="salami"
+                                    value={values.salami}
+                                    onChange={change}
+                                />
+                            </label>
+                            <label>
+                                Red Peppers
+                                <input 
+                                    type="checkbox"
+                                    name="redpepper"
+                                    value={values.redpeppers}
+                                    onChange={change}
+                                />
+                            </label>
+                            <label>
+                                Sausage
+                                <input 
+                                    type="checkbox"
+                                    name="sausage"
+                                    value={values.sausage}
+                                    onChange={change}
+                                />
+                            </label>
+                            <label>
+                                Pineapple
+                                <input 
+                                    type="checkbox"
+                                    name="pineapple"
+                                    value={values.pineapple}
+                                    onChange={change}
+                                />
+                            </label>
+                            <label>
+                                Red Onion
+                                <input 
+                                    type="checkbox"
+                                    name="redonion"
+                                    value={values.redonion}
+                                    onChange={change}
+                                />
+                            </label>
+                            <label>
+                                Roasted Garlic
+                                <input 
+                                    type="checkbox"
+                                    name="garlic"
+                                    value={values.garlic}
+                                    onChange={change}
+                                />
+                            </label>
+                            <label>
+                                Grilled Chicken
+                                <input 
+                                    type="checkbox"
+                                    name="chicken"
+                                    value={values.chicken}
+                                    onChange={change}
+                                />
+                            </label>
+                            <label>
+                                Tomatoes
+                                <input 
+                                    type="checkbox"
+                                    name="tomatoes"
+                                    value={values.tomatoes}
+                                    onChange={change}
+                                />
+                            </label>
+                            <label>
+                                Green Pepper
+                                <input 
+                                    type="checkbox"
+                                    name="greenpepper"
+                                    value={values.greenpepper}
+                                    onChange={change}
+                                />
+                            </label>
+                        </div>
+
+                        <label>
+                            Any special instructions?
+                            <input 
+                                id="special-text"
+                                type="text"
+                                name="special"
+                                value={values.special}
+                                onChange={change}
+                            />
+                        </label>
+
+                        <button id="order-button" disabled={disabled}>Add to Order!</button>
+
                     </form>
                 </div>
             </section>
