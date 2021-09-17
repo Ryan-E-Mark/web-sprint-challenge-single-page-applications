@@ -13,14 +13,18 @@ export default function Home(props) {
     return (
         <div>
             <nav>
-                <h2>World's Best Pizza!</h2>
-                <a><Link to={"/"}>Home</Link></a>
-                <div className="pizza-pic">
-                    <h1>Saucy Pizza Delivered QUICK!</h1>
+                <div className="nav-text">
+                    <h2>World's Best Pizza!</h2>
+                </div>
+                <div className="nav-link">
+                    <a><Link to={"/"}>Home</Link></a>
                 </div>
             </nav>
-
-            <button onClick={pizzaButton}>Order a Pizza!</button>
+            <div className="pizza-pic">
+                    <h1>Saucy Pizza Delivered QUICK!</h1>
+                    <button onClick={pizzaButton}>Order a Pizza!</button>
+            </div>
+            
         </div>
     )
 }

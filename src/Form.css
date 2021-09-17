@@ -1,0 +1,10 @@
+.form-page {
+    display: flex;
+    justify-content: center;
+}
+
+.form-div {
+    background-color: #BB3B0E;
+    width: 80%;
+}
+
