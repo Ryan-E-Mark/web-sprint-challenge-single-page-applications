@@ -31,7 +31,11 @@ export default function PizzaForm(props) {
             <section className="form-page">
                 <div className="form-div">
                     <form id="pizza-form" onSubmit={submit}>
-                        {}
+                        <div className="error-text">
+                            <p>{errors.name}</p>
+                            <p>{errors.size}</p>
+                            <p>{errors.sauce}</p>
+                        </div>
                         <label>
                             Name for the order: 
                             <input 
