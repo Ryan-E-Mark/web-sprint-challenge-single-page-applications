@@ -25,6 +25,10 @@
     padding: 1%;
 }
 
+.special {
+    padding: 1%;
+}
+
 label, p {
     font-size: 1rem;
 }

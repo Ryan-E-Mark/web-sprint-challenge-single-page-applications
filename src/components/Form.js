@@ -37,6 +37,7 @@ export default function PizzaForm(props) {
                             <p>{errors.sauce}</p>
                         </div>
                         <div className="name-div">
+                            <h3>Build your pizza!</h3>
                             <label>
                                 Name for the order: 
                                 <input 
@@ -190,6 +191,7 @@ export default function PizzaForm(props) {
                             </label>
                         </div>
 
+                        <div className="special">
                         <label>
                             Any special instructions?
                             <input 
@@ -199,7 +201,9 @@ export default function PizzaForm(props) {
                                 value={values.special}
                                 onChange={change}
                             />
-                        </label>
+                        </label>    
+                        </div>
+
 
                         <button id="order-button" disabled={disabled}>Add to Order!</button>
 
