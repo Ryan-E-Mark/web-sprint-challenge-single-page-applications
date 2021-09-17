@@ -22,7 +22,7 @@ export default function Home(props) {
             </nav>
             <div className="pizza-pic">
                     <h1>Saucy Pizza Delivered QUICK!</h1>
-                    <button onClick={pizzaButton}>Order a Pizza!</button>
+                    <button id="pizza-btn" onClick={pizzaButton}>Order a Pizza!</button>
             </div>
             
         </div>

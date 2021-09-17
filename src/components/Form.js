@@ -70,7 +70,7 @@ export default function PizzaForm(props) {
 
                         <label>
                             Select your sauce:
-                            <select onChange={change} value={values.sauce} name="sauce">
+                            <select onChange={change} value={values.sauce} name="sauce" id="sauce-dropdown">
                                 <option value="">
                                     --Select a Sauce--
                                 </option>
