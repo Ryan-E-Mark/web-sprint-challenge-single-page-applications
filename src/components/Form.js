@@ -25,7 +25,7 @@ export default function PizzaForm(props) {
                     <h2>World's Best Pizza!</h2>
                 </div>
                 <div className="nav-link">
-                    <a><Link to={"/"}>Home</Link></a>
+                    <div><Link to={"/"}>Home</Link></div>
                 </div>
             </nav>
             <section className="form-page">

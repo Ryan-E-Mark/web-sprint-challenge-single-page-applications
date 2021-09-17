@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Route, Link, Switch } from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
 import axios from 'axios';
 import * as yup from 'yup';
 
@@ -13,7 +13,16 @@ const App = () => {
     name: '',
     size: '',
     sauce: '',
-    toppings: false,
+    pepperoni: false,
+    salami: false,
+    redpepper: false,
+    sausage: false,
+    pineapple: false,
+    redonion: false,
+    garlic: false,
+    chicken: false,
+    tomatoes: false,
+    greenpepper: false,
     special: '',
   }
 
@@ -44,11 +53,11 @@ const App = () => {
   }
 
   const postPizza = newPizza => {
-    axios.post("https://reqres.in/api/orders", newPizza)
+    axios.post('https://reqres.in/api/orders', newPizza)
       .then(resp => {
         setPizzas([resp.data, ...pizzas]);
         setFormValues(initialFormValues);
-        console.log(resp);
+        console.log('https://reqres.in/api/orders', resp.data);
       }).catch(err => {
         console.log(err);
         setFormValues(initialFormValues);
@@ -60,8 +69,18 @@ const App = () => {
       name: formValues.name.trim(),
       size: formValues.size.trim(),
       sauce: formValues.sauce,
-      special: formValues.special,
-      toppings: ['pepperoni', 'salami', 'redpepper', 'sausage', 'pineapple', 'redonion', 'garlic', 'chicken', 'tomatoes', 'greenpepper'].filter(topping => !!formValues[topping]),
+      special: formValues.special.trim(),
+      pepperoni: formValues.pepperoni,
+      salami: formValues.salami,
+      redpepper: formValues.redpepper,
+      sausage: formValues.sausage,
+      pineapple: formValues.pineapple,
+      redonion: formValues.redonion,
+      garlic: formValues.garlic,
+      chicken: formValues.chicken,
+      tomatoes: formValues.tomatoes,
+      greenpepper: formValues.greenpepper,
+      // toppings: ['pepperoni', 'salami', 'redpepper', 'sausage', 'pineapple', 'redonion', 'garlic', 'chicken', 'tomatoes', 'greenpepper'].filter(topping => !!formValues[topping]),
     }
     postPizza(newPizza);
   }
@@ -75,8 +94,9 @@ const App = () => {
     <div>
       <Switch>
         <Route exact path={"/"}>
-          <Home />
+          <Home href="/"/>
         </Route>
+        
         <Route path={"/pizza"}>
           <PizzaForm 
             values={formValues}
