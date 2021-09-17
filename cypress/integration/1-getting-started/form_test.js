@@ -10,7 +10,7 @@ describe('Checking that cypress can navigate to my site and run tests', () => {
     const salamiInput = () => cy.get('input[name=salami]');
     const garlicInput = () => cy.get('input[name=garlic]');
     const redpepperInput = () => cy.get('input[name=redpepper]');
-    const pizzaBtn = () => cy.get('#pizza-btn');
+    const pizzaBtn = () => cy.get('#order-pizza');
     const submitBtn = () => cy.get('#order-button');
 
     it('testing if we can type in the name input', () => {
