@@ -8,15 +8,29 @@
     width: 80%;
     
 }
+
+.name-div {
+    padding: 1%;
+}
+
+#pizza-form {
+    display: flex;
+    flex-direction: column;
+}
+
 .toppings {
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
-    padding-bottom: 1%;
+    padding: 1%;
 }
 
 label, p {
     font-size: 1rem;
+}
+
+label {
+    padding: .5%;
 }
 
 .error-text {
@@ -26,4 +40,9 @@ label, p {
 
 h3 {
     font-size: 1.5rem;
+}
+
+#order-button {
+    width: 10%;
+    margin: 1%;
 }

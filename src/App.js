@@ -54,8 +54,8 @@ const App = () => {
     setFormValues({...formValues, [name]: value});
   }
 
-  const postPizza = newPizza => {
-    axios.post('https://reqres.in/api/orders', newPizza)
+  const postPizza = addPizza => {
+    axios.post('https://reqres.in/api/orders', addPizza)
       .then(resp => {
         setPizzas([ ...pizzas, resp.data]);
         setFormValues(initialFormValues);

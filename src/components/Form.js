@@ -36,58 +36,64 @@ export default function PizzaForm(props) {
                             <p>{errors.size}</p>
                             <p>{errors.sauce}</p>
                         </div>
-                        <label>
-                            Name for the order: 
-                            <input 
-                                id="name-input"
-                                type="text"
-                                name="name"
-                                value={values.name}
-                                onChange={change}
-                                />
-                        </label>
+                        <div className="name-div">
+                            <label>
+                                Name for the order: 
+                                <input 
+                                    id="name-input"
+                                    type="text"
+                                    name="name"
+                                    value={values.name}
+                                    onChange={change}
+                                    />
+                            </label>
+                        </div>
 
-                        <label>
-                            Select your size:
-                            <select onChange={change} value={values.size} name="size" id="size-dropdown">
-                                <option value="">
-                                    --Select a Size--
-                                </option>
-                                <option value="small">
-                                    Small
-                                </option>
-                                <option value="medium">
-                                    Medium
-                                </option>
-                                <option value="large">
-                                    Large
-                                </option>
-                                <option value="extralarge">
-                                    Extra Large
-                                </option>
-                            </select>
-                        </label>
+                        <div className="name-div">
+                            <label>
+                                Select your size:
+                                <select onChange={change} value={values.size} name="size" id="size-dropdown">
+                                    <option value="">
+                                        --Select a Size--
+                                    </option>
+                                    <option value="small">
+                                        Small
+                                    </option>
+                                    <option value="medium">
+                                        Medium
+                                    </option>
+                                    <option value="large">
+                                        Large
+                                    </option>
+                                    <option value="extralarge">
+                                        Extra Large
+                                    </option>
+                                </select>
+                            </label>
+                        </div>
 
-                        <label>
-                            Select your sauce:
-                            <select onChange={change} value={values.sauce} name="sauce" id="sauce-dropdown">
-                                <option value="">
-                                    --Select a Sauce--
-                                </option>
-                                <option value="traditional">
-                                    Traditional
-                                </option>
-                                <option value="garlicbutter">
-                                    Garlic Butter
-                                </option>
-                                <option value="bbq">
-                                    BBQ
-                                </option>
-                                <option value="none">
-                                    None
-                                </option>
-                            </select>
-                        </label>
+                        <div className="name-div">
+                            <label>
+                                Select your sauce:
+                                <select onChange={change} value={values.sauce} name="sauce" id="sauce-dropdown">
+                                    <option value="">
+                                        --Select a Sauce--
+                                    </option>
+                                    <option value="traditional">
+                                        Traditional
+                                    </option>
+                                    <option value="garlicbutter">
+                                        Garlic Butter
+                                    </option>
+                                    <option value="bbq">
+                                        BBQ
+                                    </option>
+                                    <option value="none">
+                                        None
+                                    </option>
+                                </select>
+                            </label>
+                        </div>
 
                         <div className="toppings">
                             <h3>Toppings</h3>
