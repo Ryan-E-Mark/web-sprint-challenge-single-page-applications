@@ -5,6 +5,7 @@ import * as yup from 'yup';
 
 import Home from './components/Home';
 import PizzaForm from "./components/Form";
+import formSchema from "./Validate/validate";
 
 const App = () => {
 
@@ -29,8 +30,16 @@ const App = () => {
   const [formValues, setFormValues] = useState(initialFormValues);
   const [formErrors, setFormErrors] = useState(initialFormErrors);
   const [disabled, setDisabled] = useState(initialDisabled);
+ 
+  const validate = (name, value) => {
+    yup.reach(formSchema, name)
+      .validate(value)
+      .then(() => setFormErrors({ ...formErrors, [name]: '' }))
+      .catch(err => setFormErrors({ ...formErrors, [name]: err.errors[0] }))
+  }
 
   const onChange = (name, value) => {
+    validate(name, value);
     setFormValues({...formValues, [name]: value});
   }
 
@@ -57,6 +66,10 @@ const App = () => {
     postPizza(newPizza);
   }
 
+  useEffect(() => {
+    formSchema.isValid(formValues)
+      .then(valid => setDisabled(!valid))
+  }, [formValues])
 
   return (
     <div>
@@ -70,6 +83,7 @@ const App = () => {
             onSubmit={onSubmit}
             onChange={onChange}
             disabled={disabled}
+            errors={formErrors}
             />
         </Route>
       </Switch>

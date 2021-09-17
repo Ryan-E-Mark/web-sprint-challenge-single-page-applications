@@ -4,7 +4,7 @@ import "../Form.css";
 
 export default function PizzaForm(props) {
 
-    const { onChange, values, onSubmit, disabled } = props;
+    const { onChange, values, onSubmit, disabled, errors } = props;
 
     const submit = event => {
         event.preventDefault();
@@ -31,7 +31,7 @@ export default function PizzaForm(props) {
             <section className="form-page">
                 <div className="form-div">
                     <form id="pizza-form" onSubmit={submit}>
-
+                        {}
                         <label>
                             Name for the order: 
                             <input 
@@ -60,6 +60,27 @@ export default function PizzaForm(props) {
                                 </option>
                                 <option value="extralarge">
                                     Extra Large
+                                </option>
+                            </select>
+                        </label>
+
+                        <label>
+                            Select your sauce:
+                            <select onChange={change} value={values.sauce} name="sauce">
+                                <option value="">
+                                    --Select a Sauce--
+                                </option>
+                                <option value="traditional">
+                                    Traditional
+                                </option>
+                                <option value="garlicbutter">
+                                    Garlic Butter
+                                </option>
+                                <option value="bbq">
+                                    BBQ
+                                </option>
+                                <option value="none">
+                                    None
                                 </option>
                             </select>
                         </label>
